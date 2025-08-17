@@ -1,0 +1,14 @@
+# Netlify redirects file
+/*    /index.html   200
+
+# Service pages redirects
+/services/desenvolvimento-dados    /services/desenvolvimento-dados.html    200
+/services/infraestrutura-cloud     /services/infraestrutura-cloud.html     200
+/services/seguranca-conformidade   /services/seguranca-conformidade.html   200
+/services/transformacao-digital    /services/transformacao-digital.html    200
+
+# Handle trailing slashes
+/services/desenvolvimento-dados/   /services/desenvolvimento-dados.html    200
+/services/infraestrutura-cloud/    /services/infraestrutura-cloud.html     200
+/services/seguranca-conformidade/  /services/seguranca-conformidade.html   200
+/services/transformacao-digital/   /services/transformacao-digital.html    200
