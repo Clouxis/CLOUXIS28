@@ -789,6 +789,76 @@ p {
   fill: #000 !important;
 }
 
+/* Enhanced geometric robot styling - wireframe only */
+.spline-robot-geometric {
+  filter: brightness(1) contrast(1.2);
+}
+
+.spline-robot-geometric * {
+  stroke: #000 !important;
+  stroke-width: 1.5px !important;
+  fill: transparent !important;
+  background: transparent !important;
+}
+
+/* Force all mesh elements to be wireframe */
+.spline-robot-geometric mesh,
+.spline-robot-geometric [data-type="mesh"],
+.spline-robot-geometric geometry,
+.spline-robot-geometric material {
+  fill: none !important;
+  background: none !important;
+  stroke: #000 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Ensure all 3D objects are wireframe */
+.spline-robot-geometric object3d,
+.spline-robot-geometric group,
+.spline-robot-geometric scene {
+  fill: none !important;
+  background: transparent !important;
+}
+
+/* Override any solid fills */
+.spline-robot-geometric [fill],
+.spline-robot-geometric [style*="fill"] {
+  fill: none !important;
+}
+
+/* Make sure wireframe lines are visible */
+.spline-robot-geometric [stroke="none"],
+.spline-robot-geometric [style*="stroke: none"] {
+  stroke: #000 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Special handling for robot parts */
+.spline-robot-geometric .robot-head,
+.spline-robot-geometric .robot-body,
+.spline-robot-geometric .robot-arms,
+.spline-robot-geometric .robot-legs,
+.spline-robot-geometric [data-name*="head"],
+.spline-robot-geometric [data-name*="body"],
+.spline-robot-geometric [data-name*="arm"],
+.spline-robot-geometric [data-name*="leg"] {
+  fill: none !important;
+  stroke: #000 !important;
+  stroke-width: 2px !important;
+}
+
+/* Eyes and details should be outlined only */
+.spline-robot-geometric .robot-eyes,
+.spline-robot-geometric .robot-details,
+.spline-robot-geometric [data-name*="eye"],
+.spline-robot-geometric [data-name*="sensor"],
+.spline-robot-geometric [data-name*="screen"],
+.spline-robot-geometric [data-name*="detail"] {
+  fill: none !important;
+  stroke: #000 !important;
+  stroke-width: 1px !important;
+}
+
 /* Spotlight animation */
 @keyframes spotlight {
   0% {

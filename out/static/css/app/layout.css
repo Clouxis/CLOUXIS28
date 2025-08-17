@@ -1434,9 +1434,6 @@ video {
 .bg-black\/80 {
   background-color: rgb(0 0 0 / 0.8);
 }
-.bg-black\/\[0\.96\] {
-  background-color: rgb(0 0 0 / 0.96);
-}
 .bg-border {
   background-color: hsl(var(--border));
 }
@@ -1557,11 +1554,6 @@ video {
   --tw-gradient-to: rgb(249 250 251 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-neutral-50 {
-  --tw-gradient-from: #fafafa var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(250 250 250 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .from-red-400 {
   --tw-gradient-from: #f87171 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(248 113 113 / 0) var(--tw-gradient-to-position);
@@ -1604,10 +1596,6 @@ video {
   --tw-gradient-to: rgb(17 24 39 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(17 24 39 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
-.via-red-500 {
-  --tw-gradient-to: rgb(239 68 68 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #ef4444 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
 .to-black {
   --tw-gradient-to: #000 var(--tw-gradient-to-position);
 }
@@ -1616,9 +1604,6 @@ video {
 }
 .to-gray-900 {
   --tw-gradient-to: #111827 var(--tw-gradient-to-position);
-}
-.to-neutral-400 {
-  --tw-gradient-to: #a3a3a3 var(--tw-gradient-to-position);
 }
 .to-red-600 {
   --tw-gradient-to: #dc2626 var(--tw-gradient-to-position);
@@ -1631,10 +1616,6 @@ video {
 }
 .to-white {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
-}
-.bg-clip-text {
-  -webkit-background-clip: text;
-          background-clip: text;
 }
 .fill-current {
   fill: currentColor;
@@ -1927,10 +1908,6 @@ video {
 .text-muted-foreground {
   color: hsl(var(--muted-foreground));
 }
-.text-neutral-300 {
-  --tw-text-opacity: 1;
-  color: rgb(212 212 212 / var(--tw-text-opacity));
-}
 .text-popover-foreground {
   color: hsl(var(--popover-foreground));
 }
@@ -1962,9 +1939,6 @@ video {
 .text-slate-400 {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
-}
-.text-transparent {
-  color: transparent;
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -2871,6 +2845,76 @@ p {
 .spline-robot-geometric [data-name*="sensor"],
 .spline-robot-geometric [data-name*="screen"] {
   fill: #000 !important;
+}
+
+/* Enhanced geometric robot styling - wireframe only */
+.spline-robot-geometric {
+  filter: brightness(1) contrast(1.2);
+}
+
+.spline-robot-geometric * {
+  stroke: #000 !important;
+  stroke-width: 1.5px !important;
+  fill: transparent !important;
+  background: transparent !important;
+}
+
+/* Force all mesh elements to be wireframe */
+.spline-robot-geometric mesh,
+.spline-robot-geometric [data-type="mesh"],
+.spline-robot-geometric geometry,
+.spline-robot-geometric material {
+  fill: none !important;
+  background: none !important;
+  stroke: #000 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Ensure all 3D objects are wireframe */
+.spline-robot-geometric object3d,
+.spline-robot-geometric group,
+.spline-robot-geometric scene {
+  fill: none !important;
+  background: transparent !important;
+}
+
+/* Override any solid fills */
+.spline-robot-geometric [fill],
+.spline-robot-geometric [style*="fill"] {
+  fill: none !important;
+}
+
+/* Make sure wireframe lines are visible */
+.spline-robot-geometric [stroke="none"],
+.spline-robot-geometric [style*="stroke: none"] {
+  stroke: #000 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Special handling for robot parts */
+.spline-robot-geometric .robot-head,
+.spline-robot-geometric .robot-body,
+.spline-robot-geometric .robot-arms,
+.spline-robot-geometric .robot-legs,
+.spline-robot-geometric [data-name*="head"],
+.spline-robot-geometric [data-name*="body"],
+.spline-robot-geometric [data-name*="arm"],
+.spline-robot-geometric [data-name*="leg"] {
+  fill: none !important;
+  stroke: #000 !important;
+  stroke-width: 2px !important;
+}
+
+/* Eyes and details should be outlined only */
+.spline-robot-geometric .robot-eyes,
+.spline-robot-geometric .robot-details,
+.spline-robot-geometric [data-name*="eye"],
+.spline-robot-geometric [data-name*="sensor"],
+.spline-robot-geometric [data-name*="screen"],
+.spline-robot-geometric [data-name*="detail"] {
+  fill: none !important;
+  stroke: #000 !important;
+  stroke-width: 1px !important;
 }
 
 /* Spotlight animation */
