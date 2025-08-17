@@ -13,26 +13,26 @@ interface HeroSectionProps {
 export default function HeroSection({ className = '' }: HeroSectionProps) {
   return (
     <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}>
-      <Card className="w-full h-screen bg-black/[0.96] relative overflow-hidden border-0 rounded-none">
+      <Card className="w-full h-screen bg-white relative overflow-hidden border-0 rounded-none">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
-          fill="white"
+          fill="black"
         />
         
         <div className="flex h-full">
           {/* Left content */}
           <div className="flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight">
               Everything App
               <br />
               for your
               <br />
-              <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
+              <span className="text-red-600">
                 teams
               </span>
             </h1>
             
-            <p className="mt-6 text-neutral-300 max-w-xl text-xl leading-relaxed">
+            <p className="mt-6 text-gray-700 max-w-xl text-xl leading-relaxed">
               Clouxis, an open-source platform, serves as an all-in-one 
               replacement of Linear, Jira, Slack, and Notion.
             </p>
